@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'core',  # Custom app for core functionality
+    'corsheaders',  # CORS headers for API
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # CORS middleware
+]
+
+
+# Permitir CORS para o frontend rodando no React (por padrão, ele roda em localhost:3000)
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = 'readly.urls'

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from core.views import home
+from core.views import home, LivroList
 from django.conf import settings
 from django.conf.urls.static import static
 
